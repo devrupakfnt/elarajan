@@ -1,356 +1,1157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ELARA — by LA Evolution</title>
-<meta name="description" content="ELARA by LA Evolution is a brand that focuses on women's luxury and comfort accessories. Discover sanitary napkins, earrings, lipstick and high end jewellery.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Anton = brand heading font. Nunito Sans is the web fallback for Avenir (Avenir is licensed; add your own @font-face if you have the files). -->
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --black:#000000; --gold:#ddac17; --pink:#b43189; --white:#ffffff;
-  --ink:#000000; --paper:#ffffff; --muted:#4a4a4a;
-  --head:'Anton','Impact','Arial Narrow',sans-serif;--ui:var(--body);
-  --body:'Avenir','Avenir Next','Nunito Sans','Segoe UI',sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--body);font-weight:300;color:var(--ink);background:var(--paper);line-height:1.65;font-size:1.05rem}
-img{max-width:100%;display:block}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
-h1,h2{font-family:var(--head);font-weight:400;line-height:1.1;letter-spacing:.03em}
-h3,h4{font-family:var(--body);font-weight:600;line-height:1.25;letter-spacing:.02em}
-h1{font-size:clamp(2.6rem,6.5vw,5rem)}
-h2{font-size:clamp(1.9rem,4vw,2.9rem);margin-bottom:1.2rem}
-h3{font-size:1.25rem;margin-bottom:.5rem}
-em{font-style:italic;color:var(--gold)}
-.em{color:var(--gold)}
-.on-light em{color:var(--pink)}
-.wrap{max-width:1140px;margin:0 auto;padding:0 1.5rem}
-section{padding:5.5rem 0}
-.dark{background:var(--black);color:var(--white)}
-.light{background:var(--white);color:var(--black)}
-.tag{font-family:var(--body);font-weight:600;color:var(--gold);letter-spacing:.22em;text-transform:uppercase;margin-bottom:1rem;font-size:.8rem}
-.light .tag{color:var(--pink)}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELARA — by LA Evolution</title>
+  <meta name="description"
+    content="ELARA by LA Evolution is a brand that focuses on women's luxury and comfort accessories. Discover sanitary napkins, earrings, lipstick and high end jewellery.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Anton = brand heading font. Nunito Sans is the web fallback for Avenir (Avenir is licensed; add your own @font-face if you have the files). -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Nunito+Sans:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="logo1.png" />
+  <style>
+    :root {
+      --black: #000000;
+      --gold: #ddac17;
+      --pink: #ddac17;
+      --white: #ffffff;
+      --ink: #000000;
+      --paper: #ffffff;
+      --muted: #4a4a4a;
+      --head: 'Anton', 'Impact', 'Arial Narrow', sans-serif;
+      --ui: var(--body);
+      --body: 'Avenir', 'Avenir Next', 'Nunito Sans', 'Segoe UI', sans-serif;
+    }
 
-/* Buttons */
-.btn{display:inline-block;font-family:var(--body);font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:.8rem;padding:1rem 2rem;text-decoration:none;border:2px solid var(--gold);transition:background .2s,color .2s,border-color .2s}
-.btn.solid{background:var(--gold);color:var(--black)}
-.btn.solid:hover{background:var(--white);border-color:var(--white)}
-.btn.ghost{color:var(--white)}
-.btn.ghost:hover{background:var(--gold);color:var(--black)}
-.light .btn{border-color:var(--black);color:var(--black)}
-.light .btn:hover{background:var(--pink);border-color:var(--pink);color:var(--white)}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
 
-/* Nav */
-header{position:fixed;top:0;left:0;right:0;z-index:30;background:transparent;border-bottom:3px solid transparent;transition:background .4s,border-color .4s}
-header.solid{background:var(--black);border-color:var(--gold)}
-.burger{display:none;background:none;border:2px solid var(--gold);color:var(--gold);padding:.45rem .8rem;font:600 .75rem var(--body);letter-spacing:.15em;text-transform:uppercase;cursor:pointer}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 1.5rem;max-width:1140px;margin:0 auto;flex-wrap:wrap}
-.logo{text-decoration:none;color:var(--white);display:flex;flex-direction:column;line-height:1}
-.logo b{font-family:var(--head);font-weight:400;font-size:1.8rem;letter-spacing:.04em}
-.logo span{font-weight:600;font-size:.62rem;color:var(--gold);letter-spacing:.2em}
-nav ul{list-style:none;display:flex;gap:1.5rem;flex-wrap:wrap}
-nav a{color:var(--white);text-decoration:none;font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;padding-bottom:3px;border-bottom:2px solid transparent}
-nav a:hover{border-color:var(--pink)}
+    html {
+      scroll-behavior: smooth
+    }
 
-/* Hero */
-.hero{position:relative;min-height:100vh;padding:0;background:var(--black);color:var(--white);display:flex;align-items:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--pink),var(--black))}
-.hero-bg img{width:100%;height:100%;object-fit:cover;animation:zoom 14s ease-out both}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.5) 55%,rgba(0,0,0,.15) 100%),linear-gradient(0deg,rgba(0,0,0,.6),transparent 35%)}
-.hero .wrap{position:relative;z-index:2;width:100%;padding-top:7rem;padding-bottom:7rem}
-.hero .tag{animation:rise 1s .2s both}
-.hero h1{max-width:12em;animation:rise 1.1s .4s both}
-.hero h1 em{color:var(--gold)}
-.hero p.lead{max-width:34rem;margin:1.6rem 0 2.2rem;font-size:1.15rem;animation:rise 1.1s .65s both}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:rise 1.1s .9s both}
-.hero-rule{width:90px;height:4px;background:var(--pink);margin-bottom:1.5rem;transform-origin:left;animation:grow 1s .1s both}
-.scroll{position:absolute;z-index:2;bottom:1.8rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.6rem;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--white);text-decoration:none}
-.scroll i{width:2px;height:46px;background:linear-gradient(var(--gold),transparent);animation:drip 1.8s ease-in-out infinite}
-@keyframes zoom{from{transform:scale(1.12)}to{transform:scale(1)}}
-@keyframes rise{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
-@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-/* Scroll reveal */
-.js .rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease}
-.js .rv.in{opacity:1;transform:none}
-.js .rv.d1{transition-delay:.12s}.js .rv.d2{transition-delay:.24s}.js .rv.d3{transition-delay:.36s}
+    body {
+      font-family: var(--body);
+      font-weight: 300;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+      font-size: 1.05rem
+    }
 
-/* Statement */
-.statement{text-align:left}
-.statement .wrap{max-width:900px}
-.statement p.q{font-family:var(--head);font-size:clamp(1.8rem,4.2vw,3rem);line-height:1.2;letter-spacing:.02em;margin:1rem 0 2.2rem}
+    img {
+      max-width: 100%;
+      display: block
+    }
 
-/* About */
-.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:3.5rem;align-items:start}
-.about-img{background:var(--pink);border-bottom:10px solid var(--gold);aspect-ratio:4/5;position:relative;overflow:hidden}
-.about-img img{transition:transform 1.5s;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.about-text p{margin-bottom:1.1rem}
+    a {
+      color: inherit
+    }
 
-/* Collection */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.6rem;margin-top:2.5rem}
-.card{background:var(--white);color:var(--black);display:flex;flex-direction:column}
-.card .ph{aspect-ratio:1/1;background:var(--pink);position:relative;overflow:hidden}
-.card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s,transform 1.2s}
-.card:hover .ph img{transform:scale(1.06)}
-.card{transition:transform .4s}
-.card:hover{transform:translateY(-6px)}
-.card .ph img+img{opacity:0}
-.card:hover .ph img+img{opacity:1}
-.card .body{padding:1.3rem 1.3rem 1.6rem;border-top:6px solid var(--gold);flex:1;display:flex;flex-direction:column;align-items:flex-start}
-.card .cat{font-weight:600;color:var(--pink);letter-spacing:.2em;text-transform:uppercase;font-size:.7rem}
-.card p{margin:.4rem 0 1.2rem;font-size:.98rem;flex:1}
-.card .btn{padding:.55rem 1.2rem;font-size:.95rem}
+    :focus-visible {
+      outline: 3px solid var(--pink);
+      outline-offset: 3px
+    }
 
-/* Why */
-.why{background:var(--pink);color:var(--white);position:relative}
-.why .intro{max-width:46rem;margin-bottom:2.5rem}
-.why .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem}
-.why .col{border-top:6px solid var(--gold);padding-top:1rem}
-.why em{color:var(--gold)}
-.why .btns{margin-top:3rem;display:flex;gap:1rem;flex-wrap:wrap}
-.why .btn.ghost{border-color:var(--white)}
-.why .btn.ghost:hover{background:var(--white);color:var(--pink)}
+    h1,
+    h2 {
+      font-family: var(--head);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: .03em
+    }
 
-/* Features */
-.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2.5rem}
-.feat div{border:2px solid var(--black);padding:1.6rem;transition:background .3s,color .3s,border-color .3s}
-.feat div:hover{background:var(--black);color:var(--white)}
-.feat div:hover{border-color:var(--pink)}
-.feat .n{font-family:var(--head);color:var(--gold);font-size:1.6rem;background:var(--black);display:inline-block;padding:0 .6rem;margin-bottom:.9rem}
+    h3,
+    h4 {
+      font-family: var(--body);
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: .02em
+    }
 
-/* Did you know */
-.know .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
-.know p{margin-bottom:1rem}
-.know .pic{aspect-ratio:4/5;background:linear-gradient(160deg,var(--gold),var(--pink));position:relative;overflow:hidden;border:6px solid var(--gold)}
-.know .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+    h1 {
+      font-size: clamp(2.6rem, 6.5vw, 5rem)
+    }
 
-/* Contact */
-.contact{background:var(--gold);color:var(--black)}
-.contact .wrap{max-width:820px}
-.contact em{color:var(--white)}
-form{margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
-label{display:flex;flex-direction:column;font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.72rem;gap:.4rem}
-.full{grid-column:1/-1}
-input,select,textarea{font:inherit;font-weight:400;padding:.8rem;border:2px solid var(--black);background:var(--white);color:var(--black);border-radius:0}
-input:focus,select:focus,textarea:focus{outline:3px solid var(--pink);outline-offset:0}
-textarea{min-height:130px;resize:vertical}
-.consent{flex-direction:row;align-items:flex-start;gap:.7rem;font-weight:400;letter-spacing:0;text-transform:none;font-size:.95rem}
-.consent input{margin-top:.3rem;accent-color:var(--pink)}
-button.btn{cursor:pointer;background:var(--black);color:var(--white);border-color:var(--black);justify-self:start}
-button.btn:hover{background:var(--pink);border-color:var(--pink)}
+    h2 {
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      margin-bottom: 1.2rem
+    }
 
-/* Footer */
-footer{background:var(--black);color:var(--white);padding:4rem 0 2rem;border-top:6px solid var(--gold)}
-.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem}
-footer img{height:58px;width:auto;margin-bottom:1rem}
-footer h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:.9rem}
-footer ul{list-style:none}
-footer li{margin-bottom:.4rem}
-footer a{text-decoration:none}
-footer a:hover{color:var(--pink)}
-.social{display:flex;gap:1.2rem;margin-top:1rem;font-weight:600;flex-wrap:wrap}
-.copy{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #333;font-size:.9rem;color:#bbb}
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: .5rem
+    }
 
-@media(max-width:900px){
-  .burger{display:block}
-  nav{width:100%}
-  nav ul{display:none;flex-direction:column;gap:1rem;padding:1rem 0 1.4rem}
-  nav.open ul{display:flex}
-  header{background:var(--black)}
-}
-@media(max-width:820px){
-  .about-grid,.know .wrap,.fgrid,form{grid-template-columns:1fr}
-  .hero::after{background:rgba(0,0,0,.6)}
-  section{padding:4rem 0}
-}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .rv{opacity:1;transform:none}}
-</style>
+    .accent {
+      font-style: inherit;
+      color: var(--gold)
+    }
+
+    .on-light .accent {
+      color: var(--pink)
+    }
+
+    .wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.5rem
+    }
+
+    section {
+      padding: 5.5rem 0
+    }
+
+    .dark {
+      background: var(--black);
+      color: var(--white)
+    }
+
+    .light {
+      background: var(--white);
+      color: var(--black)
+    }
+
+    .tag {
+      font-family: var(--body);
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      font-size: .8rem
+    }
+
+    .light .tag {
+      color: var(--pink)
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      font-family: var(--body);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .8rem;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border: 2px solid var(--gold);
+      transition: background .2s, color .2s, border-color .2s
+    }
+
+    .btn.solid {
+      background: var(--gold);
+      color: var(--black)
+    }
+
+    .btn.solid:hover {
+      background: var(--white);
+      border-color: var(--white)
+    }
+
+    .btn.ghost {
+      color: var(--white)
+    }
+
+    .btn.ghost:hover {
+      background: var(--gold);
+      color: var(--black)
+    }
+
+    .light .btn {
+      border-color: var(--black);
+      color: var(--black)
+    }
+
+    .light .btn:hover {
+      background: var(--pink);
+      border-color: var(--pink);
+      color: var(--white)
+    }
+
+    /* Nav */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 30;
+      background: transparent;
+      border-bottom: 3px solid transparent;
+      transition: background .4s, border-color .4s
+    }
+
+    header.solid {
+      background: var(--black);
+      border-color: var(--gold)
+    }
+
+    .burger {
+      display: none;
+      background: none;
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      padding: .45rem .8rem;
+      font: 600 .75rem var(--body);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      cursor: pointer
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: .9rem 1.5rem;
+      max-width: 1140px;
+      margin: 0 auto;
+      flex-wrap: wrap
+    }
+
+    .logo {
+      text-decoration: none;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      line-height: 1
+    }
+
+    .logo b {
+      font-family: var(--head);
+      font-weight: 400;
+      font-size: 1.8rem;
+      letter-spacing: .04em
+    }
+
+    .logo span {
+      font-weight: 600;
+      font-size: .62rem;
+      color: var(--gold);
+      letter-spacing: .2em
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .72rem;
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent
+    }
+
+    nav a:hover {
+      border-color: var(--pink)
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      padding: 0;
+      background: var(--black);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      overflow: hidden
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--pink), var(--black))
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: zoom 14s ease-out both
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0, 0, 0, .85) 0%, rgba(0, 0, 0, .5) 55%, rgba(0, 0, 0, .15) 100%), linear-gradient(0deg, rgba(0, 0, 0, .6), transparent 35%)
+    }
+
+    .hero .wrap {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding-top: 7rem;
+      padding-bottom: 7rem
+    }
+
+    .hero .tag {
+      animation: rise 1s .2s both
+    }
+
+    .hero h1 {
+      max-width: 12em;
+      animation: rise 1.1s .4s both
+    }
+
+    .hero h1 .accent {
+      color: var(--gold)
+    }
+
+    .hero p.lead {
+      max-width: 34rem;
+      margin: 1.6rem 0 2.2rem;
+      font-size: 1.15rem;
+      animation: rise 1.1s .65s both
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: rise 1.1s .9s both
+    }
+
+    .hero-rule {
+      width: 90px;
+      height: 4px;
+      background: var(--pink);
+      margin-bottom: 1.5rem;
+      transform-origin: left;
+      animation: grow 1s .1s both
+    }
+
+    .scroll {
+      position: absolute;
+      z-index: 2;
+      bottom: 1.8rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .6rem;
+      font-size: .65rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--white);
+      text-decoration: none
+    }
+
+    .scroll i {
+      width: 2px;
+      height: 46px;
+      background: linear-gradient(var(--gold), transparent);
+      animation: drip 1.8s ease-in-out infinite
+    }
+
+    @keyframes zoom {
+      from {
+        transform: scale(1.12)
+      }
+
+      to {
+        transform: scale(1)
+      }
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(34px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    @keyframes grow {
+      from {
+        transform: scaleX(0)
+      }
+
+      to {
+        transform: scaleX(1)
+      }
+    }
+
+    @keyframes drip {
+      0% {
+        transform: scaleY(0);
+        transform-origin: top
+      }
+
+      50% {
+        transform: scaleY(1);
+        transform-origin: top
+      }
+
+      51% {
+        transform-origin: bottom
+      }
+
+      100% {
+        transform: scaleY(0);
+        transform-origin: bottom
+      }
+    }
+
+    /* Scroll reveal */
+    .js .rv {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .9s ease, transform .9s ease
+    }
+
+    .js .rv.in {
+      opacity: 1;
+      transform: none
+    }
+
+    .js .rv.d1 {
+      transition-delay: .12s
+    }
+
+    .js .rv.d2 {
+      transition-delay: .24s
+    }
+
+    .js .rv.d3 {
+      transition-delay: .36s
+    }
+
+    /* Statement */
+    .statement {
+      text-align: left
+    }
+
+    .statement .wrap {
+      max-width: 900px
+    }
+
+    .statement p.q {
+      font-family: var(--head);
+      font-size: clamp(1.8rem, 4.2vw, 3rem);
+      line-height: 1.2;
+      letter-spacing: .02em;
+      margin: 1rem 0 2.2rem
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 3.5rem;
+      align-items: start
+    }
+
+    .about-img {
+      background: var(--pink);
+      border-bottom: 10px solid var(--gold);
+      aspect-ratio: 4/5;
+      position: relative;
+      overflow: hidden
+    }
+
+    .about-img img {
+      transition: transform 1.5s;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .about-text p {
+      margin-bottom: 1.1rem
+    }
+
+    /* Collection */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.6rem;
+      margin-top: 2.5rem
+    }
+
+    .card {
+      background: var(--white);
+      color: var(--black);
+      display: flex;
+      flex-direction: column
+    }
+
+    .card .ph {
+      aspect-ratio: 1/1;
+      background: var(--pink);
+      position: relative;
+      overflow: hidden
+    }
+
+    .card .ph img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity .5s, transform 1.2s
+    }
+
+    .card:hover .ph img {
+      transform: scale(1.06)
+    }
+
+    .card {
+      transition: transform .4s
+    }
+
+    .card:hover {
+      transform: translateY(-6px)
+    }
+
+    .card .ph img+img {
+      opacity: 0
+    }
+
+    .card:hover .ph img+img {
+      opacity: 1
+    }
+
+    .card .body {
+      padding: 1.3rem 1.3rem 1.6rem;
+      border-top: 6px solid var(--gold);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start
+    }
+
+    .card .cat {
+      font-weight: 600;
+      color: var(--pink);
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      font-size: .7rem
+    }
+
+    .card p {
+      margin: .4rem 0 1.2rem;
+      font-size: .98rem;
+      flex: 1
+    }
+
+    .card .btn {
+      padding: .55rem 1.2rem;
+      font-size: .95rem
+    }
+
+    /* Why */
+    .why {
+      background: var(--black);
+      color: var(--white);
+      position: relative
+    }
+
+    .why .intro {
+      max-width: 46rem;
+      margin-bottom: 2.5rem
+    }
+
+    .why .cols {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem
+    }
+
+    .why .col {
+      border-top: 6px solid var(--gold);
+      padding-top: 1rem
+    }
+
+    .why .accent {
+      color: var(--gold)
+    }
+
+    .why .btns {
+      margin-top: 3rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap
+    }
+
+    .why .btn.ghost {
+      border-color: var(--white)
+    }
+
+    .why .btn.ghost:hover {
+      background: var(--white);
+      color: var(--pink)
+    }
+
+    /* Features */
+    .feat {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem
+    }
+
+    .feat div {
+      border: 2px solid var(--black);
+      padding: 1.6rem;
+      transition: background .3s, color .3s, border-color .3s
+    }
+
+    .feat div:hover {
+      background: var(--black);
+      color: var(--white)
+    }
+
+    .feat div:hover {
+      border-color: var(--pink)
+    }
+
+    .feat .n {
+      font-family: var(--head);
+      color: var(--gold);
+      font-size: 1.6rem;
+      background: var(--black);
+      display: inline-block;
+      padding: 0 .6rem;
+      margin-bottom: .9rem
+    }
+
+    /* Did you know */
+    .know .wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center
+    }
+
+    .know p {
+      margin-bottom: 1rem
+    }
+
+    .know .pic {
+      aspect-ratio: 4/5;
+      background: linear-gradient(160deg, var(--gold), var(--pink));
+      position: relative;
+      overflow: hidden;
+      border: 6px solid var(--gold)
+    }
+
+    .know .pic img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(1)
+    }
+
+    /* Contact */
+    .contact {
+      background-color: var(--white);
+      background-image: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), url("https://images.unsplash.com/photo-1603974372039-adc49044b6bd?auto=format&fit=crop&w=2200&q=80");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: var(--black)
+    }
+
+    .contact .wrap {
+      max-width: 820px
+    }
+
+    .contact .accent {
+      color: var(--pink)
+    }
+
+    form {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: .72rem;
+      gap: .4rem
+    }
+
+    .full {
+      grid-column: 1/-1
+    }
+
+    input,
+    select,
+    textarea {
+      font: inherit;
+      font-weight: 400;
+      padding: .8rem;
+      border: 2px solid var(--black);
+      background: var(--white);
+      color: var(--black);
+      border-radius: 0
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 3px solid var(--pink);
+      outline-offset: 0
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical
+    }
+
+    .consent {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: .7rem;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      font-size: .95rem
+    }
+
+    .consent input {
+      margin-top: .3rem;
+      accent-color: var(--pink)
+    }
+
+    button.btn {
+      cursor: pointer;
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+      justify-self: start
+    }
+
+    button.btn:hover {
+      background: var(--pink);
+      border-color: var(--pink)
+    }
+
+    /* Footer */
+    footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 4rem 0 2rem;
+      border-top: 6px solid var(--gold)
+    }
+
+    .fgrid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 2.5rem
+    }
+
+    footer img {
+      height: 58px;
+      width: auto;
+      margin-bottom: 1rem
+    }
+
+    footer h4 {
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: var(--gold);
+      margin-bottom: .9rem
+    }
+
+    footer ul {
+      list-style: none
+    }
+
+    footer li {
+      margin-bottom: .4rem
+    }
+
+    footer a {
+      text-decoration: none
+    }
+
+    footer a:hover {
+      color: var(--pink)
+    }
+
+    .social {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 1rem;
+      font-weight: 600;
+      flex-wrap: wrap
+    }
+
+    .copy {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #333;
+      font-size: .9rem;
+      color: #bbb
+    }
+
+    @media(max-width:900px) {
+      .burger {
+        display: block
+      }
+
+      nav {
+        width: 100%
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 0 1.4rem
+      }
+
+      nav.open ul {
+        display: flex
+      }
+
+      header {
+        background: var(--black)
+      }
+    }
+
+    @media(max-width:820px) {
+
+      .about-grid,
+      .know .wrap,
+      .fgrid,
+      form {
+        grid-template-columns: 1fr
+      }
+
+      .hero::after {
+        background: rgba(0, 0, 0, .6)
+      }
+
+      section {
+        padding: 4rem 0
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important
+      }
+
+      .js .rv {
+        opacity: 1;
+        transform: none
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <div class="nav">
-    <!-- <a class="logo" href="#" aria-label="ELARA by LA Evolution home"><b>Elara</b><span>BY LA EVOLUTION</span></a> -->
+  <header>
+    <div class="nav">
+      <!-- <a class="logo" href="#" aria-label="ELARA by LA Evolution home"><b>Elara</b><span>BY LA EVOLUTION</span></a> -->
       <img src="https://devrupakfnt.github.io/elarajan/logo1.png" class="logo" width="120px" alt="ÉLARA logo">
-    <button class="burger" aria-expanded="false" aria-controls="menu">Menu</button>
-    <nav aria-label="Main" id="nav">
-      <ul id="menu">
-        <li><a href="#collection">Our Collections</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#whyelara">Why Elara?</a></li>
-        <li><a href="#feature">Key Features</a></li>
-        <li><a href="https://magazine.laevolution.com">LA Evolution Magazine</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="hero">
-  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1620656798579-1984d9e87df7?auto=format&fit=crop&w=2200&q=80" alt="Woman wearing a gold necklace"></div>
-  <div class="wrap">
-    <div class="hero-rule"></div>
-    <p class="tag">Elara:</p>
-    <h1><em>A Wellness</em> &amp; Lifestyle Brand</h1>
-    <p class="lead">Pure, Ethical, and Beautiful. Just Like You. Luxury for Every Woman, Beauty without Limits.</p>
-    <div class="hero-btns">
-      <a class="btn solid" href="#statement">Discover</a>
-      <a class="btn ghost" href="#contact">Contact Us</a>
+      <button class="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav aria-label="Main" id="nav">
+        <ul id="menu">
+          <li><a href="#collection">Our Collections</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#whyelara">Why Elara?</a></li>
+          <li><a href="#feature">Key Features</a></li>
+          <li><a href="https://magazine.laevolution.com">LA Evolution Magazine</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-  <a class="scroll" href="#statement">Scroll<i></i></a>
-</section>
+  </header>
 
-<section id="statement" class="statement light on-light">
-  <div class="wrap">
-    <p class="tag">Elara by LA Evolution</p>
-    <p class="q rv">Luxury is the quiet confidence of <em>a perfectly made thing.</em></p>
-    <a class="btn" href="#collection">Discover our Collections</a>
-  </div>
-</section>
-
-<section id="about" class="dark">
-  <div class="wrap about-grid">
-    <div class="about-img rv"><img src="https://images.unsplash.com/photo-1783881210991-fe3c3c5759cd?auto=format&fit=crop&w=1600&q=80" alt="Elegant woman in a red dress by the coast"></div>
-    <div class="about-text rv">
-      <h2 class="rv">About <em>Us</em></h2>
-      <p>Elara by LA Evolution is more than a beauty brand—it's a celebration of every woman’s right to experience luxury. We believe elegance shouldn't be reserved for a few but accessible to all, regardless of age or background. Elara was created with a vision to redefine sophistication by blending timeless beauty with modern affordability—so every woman can feel radiant and empowered without compromise.</p>
-      <p>Crafted for today’s confident, conscious woman, Elara products are thoughtfully formulated using high-quality, organic ingredients that nourish, protect, and enhance. From skincare to self-care essentials, each creation is an invitation to indulge in moments of self-love and refinement—infused with both science and soul.</p>
-      <p>Rooted in the values of sustainability and integrity, Elara is committed to ethical sourcing, eco-conscious practices, and cruelty-free beauty. Because we believe in making the world better while making you feel beautiful.</p>
-      <a class="btn solid" href="#collection">Key Features</a>
-    </div>
-  </div>
-</section>
-
-<section id="collection" class="dark" style="padding-top:0">
-  <div class="wrap">
-    <p class="tag">The Collection</p>
-    <h2 class="rv">Our <em>Accessories</em></h2>
-    <div class="grid">
-      <article class="card rv">
-        <div class="ph"><img src="https://images.unsplash.com/photo-1773929345739-94db8a4ccd0c?auto=format&fit=crop&w=800&q=80" alt="Gold pendant necklace"><img src="https://images.unsplash.com/photo-1569397288884-4d43d6738fbd?auto=format&fit=crop&w=800&q=80" alt="Pendant necklace detail"></div>
-        <div class="body"><span class="cat">Necklaces</span><h3>Aurélie Pendant</h3><p>A delicate circular pendant that catches the light with every movement.</p><a class="btn" href="#contact">Enquire</a></div>
-      </article>
-      <article class="card rv">
-        <div class="ph"><img src="https://devrupakfnt.github.io/elarajan/elarapad.jpg" alt="ÉLARA sanitary napkins"><img src="https://devrupakfnt.github.io/elarajan/elarapad.jpg" alt="ÉLARA sanitary napkins packaging"></div>
-        <div class="body"><span class="cat">Hygiene</span><h3>Premium Sanitary Napkins</h3><p>Comfortable, thoughtfully made everyday essentials.</p><a class="btn" href="#contact">Enquire</a></div>
-      </article>
-      <article class="card rv">
-        <div class="ph"><img src="https://images.unsplash.com/photo-1603974372039-adc49044b6bd?auto=format&fit=crop&w=800&q=80" alt="Gold crown set with amethysts"><img src="https://images.unsplash.com/photo-1651160670627-2896ddf7822f?auto=format&fit=crop&w=800&q=80" alt="Amethyst jewellery detail"></div>
-        <div class="body"><span class="cat">High Jewellery</span><h3>Tiare Impériale</h3><p>A one-of-a-kind crown in gold, set with amethysts.</p><a class="btn" href="#contact">Enquire</a></div>
-      </article>
-      <article class="card rv">
-        <div class="ph"><img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=800&q=80" alt="Diamond solitaire ring"><img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=800&q=80" alt="Solitaire ring detail"></div>
-        <div class="body"><span class="cat">Rings</span><h3>Voile Solitaire</h3><p>A brilliant solitaire, presented in a veil of silk.</p><a class="btn" href="#contact">Enquire</a></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="whyelara" class="why">
-  <div class="wrap">
-    <div class="intro">
-      <p class="tag" style="color:var(--gold)">Our Promise</p>
-      <h2 class="rv">Why <em>ELARA?</em></h2>
-      <p>At the heart of LA Evolution is a deep appreciation for individuality. We recognize that every woman is unique, with her own story, style, and strength. Our products are thoughtfully designed to complement natural beauty and help women feel confident, radiant, and unapologetically themselves.</p>
-    </div>
-    <div class="cols">
-      <div class="col rv"><h3>Luxury, made accessible</h3><p>Thoughtful beauty and self-care essentials that bring a premium feel to everyday life.</p></div>
-      <div class="col rv"><h3>Materials with meaning</h3><p>Carefully selected materials and considered design, chosen for quality and lasting comfort.</p></div>
-      <div class="col rv"><h3>Care for the future</h3><p>We keep responsibility in mind, with a focus on considered sourcing and mindful choices.</p></div>
-    </div>
-    <div class="btns">
-      <a class="btn solid" href="#collection">Explore the Collection</a>
-      <a class="btn ghost" href="#contact">Contact Us</a>
-    </div>
-  </div>
-</section>
-
-<section id="feature" class="light on-light">
-  <div class="wrap">
-    <h2 class="rv">Key Features of <em>LA Evolution</em></h2>
-    <p style="max-width:42rem">We invite you to explore our collection and discover beauty that is inclusive, empowering, and truly transformative.</p>
-    <div class="feat">
-      <div class="rv"><span class="n">01</span><h3>Organic &amp; Natural</h3><p>Gentle, effective formulas free from harmful chemicals.</p></div>
-      <div class="rv"><span class="n">02</span><h3>Ethically Sourced</h3><p>Cruelty-free and environmentally responsible.</p></div>
-      <div class="rv"><span class="n">03</span><h3>For Every Woman</h3><p>Tailored for diverse skin types, tones, and lifestyles.</p></div>
-      <div class="rv"><span class="n">04</span><h3>Confidence-Boosting</h3><p>Designed to enhance inner and outer beauty.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="know dark">
-  <div class="wrap">
-    <div class="pic rv"><img src="https://images.unsplash.com/photo-1788499584670-44ba90bdcec6?auto=format&fit=crop&w=1600&q=80" alt="Two women wearing layered gold and silver chains"></div>
-    <div>
-      <h2 class="rv">Did <em>You</em> Know?</h2>
-      <p>The global beauty industry is valued at over $500 billion, yet many luxury products remain out of reach for everyday women. LA Evolution is here to make high-end beauty more accessible.</p>
-      <p>Studies show that self-care boosts confidence and mental well-being. Our products are designed not just for beauty, but to uplift and empower women worldwide.</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <div class="wrap">
-    <p class="tag" style="color:var(--black)">Contact Us</p>
-    <h2 class="rv">Enquire <em>with</em> Us</h2>
-    <p>Complete the form and a client advisor will contact you to arrange a private viewing, a consultation or a bespoke commission.</p>
-    <form class="rv" onsubmit="return false">
-      <label>First Name<input type="text" name="first" autocomplete="given-name"></label>
-      <label>Last Name<input type="text" name="last" autocomplete="family-name"></label>
-      <label>Email Address<input type="email" name="email" autocomplete="email"></label>
-      <label>Phone Number<input type="tel" name="phone" autocomplete="tel"></label>
-      <label class="full">I am interested in
-        <select name="interest"><option>Purchase</option><option>Investment</option><option>Consultation</option><option>Other</option></select>
-      </label>
-      <label class="full">Your Message<textarea name="message"></textarea></label>
-      <label class="full consent"><input type="checkbox" name="consent"> I agree to the privacy policy and wish to receive news from the maison.</label>
-      <button class="btn" type="submit">Submit Enquiry</button>
-    </form>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="fgrid">
-      <div>
-        <img src="https://devrupakfnt.github.io/elarajan/logo1.png" alt="ÉLARA logo">
-        <p>More than just a brand, LA Evolution is a community of empowered women, embracing self-love and authenticity.</p>
-        <div class="social">
-          <a href="https://www.instagram.com/elara_by_la_evolution?igsh=MWNreWk5M2NnZndwMA%3D%3D">Instagram</a>
-          <a href="https://www.facebook.com/share/1Aww7dmQUx/">Facebook</a>
+  <main>
+    <section class="hero">
+      <div class="hero-bg"><img
+          src="https://images.unsplash.com/photo-1620656798579-1984d9e87df7?auto=format&fit=crop&w=2200&q=80"
+          alt="Woman wearing a gold necklace"></div>
+      <div class="wrap">
+        <div class="hero-rule"></div>
+        <p class="tag">Elara:</p>
+        <h1><span class="accent">A Wellness</span> &amp; Lifestyle Brand</h1>
+        <p class="lead">Pure, Ethical, and Beautiful. Just Like You. Luxury for Every Woman, Beauty without Limits.</p>
+        <div class="hero-btns">
+          <a class="btn solid" href="#statement">Discover</a>
+          <a class="btn ghost" href="#contact">Contact Us</a>
         </div>
       </div>
-      <div><h4>Client Services</h4><ul>
-        <li><a href="#contact">Purchase</a></li><li><a href="#contact">Enquire Us</a></li><li><a href="#contact">Consultation</a></li><li><a href="#contact">Invest</a></li></ul></div>
-      <div><h4>Our Magazine</h4><ul><li><a href="https://magazine.laevolution.com">LA Evolution Magazine</a></li></ul></div>
-      <div><h4>Shop</h4><ul>
-        <li><a href="#collection">Elara Sanitary Pad</a></li><li><a href="#collection">Jwellery</a></li><li><a href="#collection">Rings</a></li><li><a href="#collection">Accessories</a></li></ul></div>
+      <a class="scroll" href="#statement">Scroll<i></i></a>
+    </section>
+
+    <section id="statement" class="statement light on-light">
+      <div class="wrap">
+        <p class="tag">Elara by LA Evolution</p>
+        <p class="q rv">Luxury is the quiet confidence of <span class="accent">a perfectly made thing.</span></p>
+        <a class="btn" href="#collection">Discover our Collections</a>
+      </div>
+    </section>
+
+    <section id="about" class="dark">
+      <div class="wrap about-grid">
+        <div class="about-img rv"><img
+            src="https://images.unsplash.com/photo-1783881210991-fe3c3c5759cd?auto=format&fit=crop&w=1600&q=80"
+            alt="Elegant woman in a red dress by the coast"></div>
+        <div class="about-text rv">
+          <h2 class="rv">About <span class="accent">Us</span></h2>
+          <p>Elara by LA Evolution is more than a beauty brand—it's a celebration of every woman’s right to experience
+            luxury. We believe elegance shouldn't be reserved for a few but accessible to all, regardless of age or
+            background. Elara was created with a vision to redefine sophistication by blending timeless beauty with
+            modern affordability—so every woman can feel radiant and empowered without compromise.</p>
+          <p>Crafted for today’s confident, conscious woman, Elara products are thoughtfully formulated using
+            high-quality, organic ingredients that nourish, protect, and enhance. From skincare to self-care essentials,
+            each creation is an invitation to indulge in moments of self-love and refinement—infused with both science
+            and soul.</p>
+          <p>Rooted in the values of sustainability and integrity, Elara is committed to ethical sourcing, eco-conscious
+            practices, and cruelty-free beauty. Because we believe in making the world better while making you feel
+            beautiful.</p>
+          <a class="btn solid" href="#collection">Key Features</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="collection" class="light">
+      <div class="wrap">
+        <p class="tag">The Collection</p>
+        <h2 class="rv">Our <span class="accent">Accessories</span></h2>
+        <div class="grid">
+          <article class="card rv">
+            <div class="ph"><img
+                src="https://images.unsplash.com/photo-1773929345739-94db8a4ccd0c?auto=format&fit=crop&w=800&q=80"
+                alt="Gold pendant necklace"><img
+                src="https://images.unsplash.com/photo-1569397288884-4d43d6738fbd?auto=format&fit=crop&w=800&q=80"
+                alt="Pendant necklace detail"></div>
+            <div class="body"><span class="cat">Necklaces</span>
+              <h3>Gold Pendant</h3>
+              <p>A delicate circular pendant that catches the light with every movement.</p><a class="btn"
+                href="#contact">Enquire</a>
+            </div>
+          </article>
+          <article class="card rv">
+            <div class="ph"><img src="https://devrupakfnt.github.io/elarajan/elarapad.jpg"
+                alt="ÉLARA sanitary napkins"><img src="https://devrupakfnt.github.io/elarajan/elarapad.jpg"
+                alt="ÉLARA sanitary napkins packaging"></div>
+            <div class="body"><span class="cat">Hygiene</span>
+              <h3>Premium Sanitary Napkins</h3>
+              <p>Comfortable, thoughtfully made everyday essentials.</p><a class="btn" href="#contact">Enquire</a>
+            </div>
+          </article>
+          <article class="card rv">
+            <div class="ph"><img
+                src="https://images.unsplash.com/photo-1603974372039-adc49044b6bd?auto=format&fit=crop&w=800&q=80"
+                alt="Gold crown set with amethysts"><img
+                src="https://images.unsplash.com/photo-1651160670627-2896ddf7822f?auto=format&fit=crop&w=800&q=80"
+                alt="Amethyst jewellery detail"></div>
+            <div class="body"><span class="cat">High End Jewellery</span>
+              <h3>Tiare Jwellery Set</h3>
+              <p>A one-of-a-kind crown in gold, set with amethysts.</p><a class="btn" href="#contact">Enquire</a>
+            </div>
+          </article>
+          <article class="card rv">
+            <div class="ph"><img src="lipstick.jpg" alt="Elara Lipstick"><img src="lipstick.jpg"
+                alt="Solitaire lipstick"></div>
+            <div class="body"><span class="cat">Woman Beauty</span>
+              <h3>Elara Lipstick</h3>
+              <p>A brilliant solitaire, presented in a veil of silk.</p><a class="btn" href="#contact">Enquire</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="whyelara" class="why dark">
+      <div class="wrap">
+        <div class="intro">
+          <p class="tag" style="color:var(--gold)">Our Promise</p>
+          <h2 class="rv">Why <span class="accent">ELARA?</span></h2>
+          <p>At the heart of LA Evolution is a deep appreciation for individuality. We recognize that every woman is
+            unique, with her own story, style, and strength. Our products are thoughtfully designed to complement
+            natural beauty and help women feel confident, radiant, and unapologetically themselves.</p>
+        </div>
+        <div class="cols">
+          <div class="col rv">
+            <h3>Luxury, made accessible</h3>
+            <p>Thoughtful beauty and self-care essentials that bring a premium feel to everyday life.</p>
+          </div>
+          <div class="col rv">
+            <h3>Materials with meaning</h3>
+            <p>Carefully selected materials and considered design, chosen for quality and lasting comfort.</p>
+          </div>
+          <div class="col rv">
+            <h3>Care for the future</h3>
+            <p>We keep responsibility in mind, with a focus on considered sourcing and mindful choices.</p>
+          </div>
+        </div>
+        <div class="btns">
+          <a class="btn solid" href="#collection">Explore the Collection</a>
+          <a class="btn ghost" href="#contact">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="feature" class="light on-light">
+      <div class="wrap">
+        <h2 class="rv">Key Features of <span class="accent">LA Evolution</span></h2>
+        <p style="max-width:42rem">We invite you to explore our collection and discover beauty that is inclusive,
+          empowering, and truly transformative.</p>
+        <div class="feat">
+          <div class="rv"><span class="n">01</span>
+            <h3>Organic &amp; Natural</h3>
+            <p>Gentle, effective formulas free from harmful chemicals.</p>
+          </div>
+          <div class="rv"><span class="n">02</span>
+            <h3>Ethically Sourced</h3>
+            <p>Cruelty-free and environmentally responsible.</p>
+          </div>
+          <div class="rv"><span class="n">03</span>
+            <h3>For Every Woman</h3>
+            <p>Tailored for diverse skin types, tones, and lifestyles.</p>
+          </div>
+          <div class="rv"><span class="n">04</span>
+            <h3>Confidence-Boosting</h3>
+            <p>Designed to enhance inner and outer beauty.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="know dark">
+      <div class="wrap">
+        <div class="pic rv"><img
+            src="https://images.unsplash.com/photo-1788499584670-44ba90bdcec6?auto=format&fit=crop&w=1600&q=80"
+            alt="Two women wearing layered gold and silver chains"></div>
+        <div>
+          <h2 class="rv">Did <span class="accent">You</span> Know?</h2>
+          <p>The global beauty industry is valued at over $500 billion, yet many luxury products remain out of reach for
+            everyday women. LA Evolution is here to make high-end beauty more accessible.</p>
+          <p>Studies show that self-care boosts confidence and mental well-being. Our products are designed not just for
+            beauty, but to uplift and empower women worldwide.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <p class="tag" style="color:var(--black)">Contact Us</p>
+        <h2 class="rv">Enquire <span class="accent">with</span> Us</h2>
+        <p>Complete the form and a client advisor will contact you to arrange a private viewing, a consultation or a
+          bespoke commission.</p>
+        <form class="rv" onsubmit="return false">
+          <label>First Name<input type="text" name="first" autocomplete="given-name"></label>
+          <label>Last Name<input type="text" name="last" autocomplete="family-name"></label>
+          <label>Email Address<input type="email" name="email" autocomplete="email"></label>
+          <label>Phone Number<input type="tel" name="phone" autocomplete="tel"></label>
+          <label class="full">I am interested in
+            <select name="interest">
+              <option>Purchase</option>
+              <option>Investment</option>
+              <option>Consultation</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label class="full">Your Message<textarea name="message"></textarea></label>
+          <label class="full consent"><input type="checkbox" name="consent"> I agree to the privacy policy and wish to
+            receive news from the maison.</label>
+          <button class="btn" type="submit">Submit Enquiry</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="fgrid">
+        <div>
+          <img src="https://devrupakfnt.github.io/elarajan/logo1.png" alt="ÉLARA logo">
+          <p>More than just a brand, LA Evolution is a community of empowered women, embracing self-love and
+            authenticity.</p>
+          <div class="social">
+            <a href="https://www.instagram.com/elara_by_la_evolution?igsh=MWNreWk5M2NnZndwMA%3D%3D">Instagram</a>
+            <a href="https://www.facebook.com/share/1Aww7dmQUx/">Facebook</a>
+          </div>
+        </div>
+        <div>
+          <h4>Client Services</h4>
+          <ul>
+            <li><a href="#contact">Purchase</a></li>
+            <li><a href="#contact">Enquire Us</a></li>
+            <li><a href="#contact">Consultation</a></li>
+            <li><a href="#contact">Invest</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Our Magazine</h4>
+          <ul>
+            <li><a href="https://magazine.laevolution.com">LA Evolution Magazine</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#collection">Elara Sanitary Pad</a></li>
+            <li><a href="#collection">Jwellery</a></li>
+            <li><a href="#collection">Rings</a></li>
+            <li><a href="#collection">Accessories</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copy">© 2026 ELARA by LA Evolution. All rights reserved.</p>
     </div>
-    <p class="copy">© 2026 ELARA by LA Evolution. All rights reserved.</p>
-  </div>
-</footer>
-<script>
-document.documentElement.classList.add('js');
-(function(){
-  var h=document.querySelector('header'),n=document.getElementById('nav'),b=document.querySelector('.burger');
-  function f(){h.classList.toggle('solid',window.scrollY>60)}f();addEventListener('scroll',f,{passive:true});
-  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
-  n.addEventListener('click',function(e){if(e.target.tagName==='A')n.classList.remove('open')});
-  var els=document.querySelectorAll('.rv');
-  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
-  document.querySelectorAll('.grid,.cols,.feat').forEach(function(g){Array.prototype.forEach.call(g.children,function(c,i){c.classList.add('d'+Math.min(i,3))})});
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-  els.forEach(function(e){io.observe(e)});
-})();
-</script>
+  </footer>
+  <script>
+    document.documentElement.classList.add('js');
+    (function () {
+      var h = document.querySelector('header'), n = document.getElementById('nav'), b = document.querySelector('.burger');
+      function f() { h.classList.toggle('solid', window.scrollY > 60) } f(); addEventListener('scroll', f, { passive: true });
+      b.addEventListener('click', function () { var o = n.classList.toggle('open'); b.setAttribute('aria-expanded', o) });
+      n.addEventListener('click', function (e) { if (e.target.tagName === 'A') n.classList.remove('open') });
+      var els = document.querySelectorAll('.rv');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in') }); return }
+      document.querySelectorAll('.grid,.cols,.feat').forEach(function (g) { Array.prototype.forEach.call(g.children, function (c, i) { c.classList.add('d' + Math.min(i, 3)) }) });
+      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } }) }, { threshold: .12 });
+      els.forEach(function (e) { io.observe(e) });
+    })();
+  </script>
 </body>
+
 </html>
